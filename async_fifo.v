@@ -66,7 +66,7 @@ always @(posedge i_rclk or negedge i_rreset_n) begin
     if(!i_rreset_n)
         count <= 'b0;
     else if((i_rd) && (!i_wr)) begin
-        if((count - 1)  == -4'hf)
+        if((count == 4'h0)
             count <= count;
         else
             count <= count - 1;
